@@ -3,11 +3,11 @@ import pandas as pd
 from dotenv import load_dotenv
 from supabase import create_client, Client
 
-# 1. Charger les variables d'environnement depuis le fichier .env
-load_dotenv()
+# 1. Charger les variables d'environnement depuis le fichier .env.local
+load_dotenv('../.env.local')
 
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+SUPABASE_URL = os.getenv("NEXT_PUBLIC_SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
 
 if not SUPABASE_URL or not SUPABASE_KEY:
     raise ValueError("Les variables d'environnement SUPABASE_URL et SUPABASE_KEY sont introuvables. Vérifiez votre fichier .env.")
@@ -16,7 +16,8 @@ if not SUPABASE_URL or not SUPABASE_KEY:
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 def importer_articles():
-    fichier = 'articles.xlsx'
+    # Le fichier est dans le dossier BD/ à la racine
+    fichier = '../BD/articles.xlsx'
     
     print(f"Lecture du fichier {fichier}...")
     try:

@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import Link from "next/link";
 import LogoutButton from "../../../components/LogoutButton";
 
 // ==========================================
@@ -65,6 +66,12 @@ export default async function AdminCommandesPage() {
           </div>
           
           <div className="flex items-center gap-4">
+            <Link href="/admin/produits" className="text-sm font-bold text-slate-500 hover:text-black">
+              Produits
+            </Link>
+            <Link href="/admin/media" className="text-sm font-bold text-slate-500 hover:text-black">
+              Upload Images
+            </Link>
             <LogoutButton />
             <div className="bg-white px-5 py-3 rounded-xl border border-gray-200 shadow-sm text-sm font-bold text-slate-700 flex items-center gap-3 w-fit">
               <span className="relative flex h-3 w-3">
