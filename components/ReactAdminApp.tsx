@@ -11,8 +11,9 @@ const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const dataProvider = supabaseDataProvider({
-    instance: supabase,
+    instanceUrl: supabaseUrl,
     apiKey: supabaseKey,
+    supabaseClient: supabase,
 });
 
 export default function ReactAdminApp() {
