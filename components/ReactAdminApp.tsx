@@ -1,7 +1,7 @@
 "use client";
 
 import { Admin, Resource, ListGuesser, EditGuesser, ShowGuesser } from "react-admin";
-import { supabaseDataProvider } from "ra-data-supabase";
+import { supabaseDataProvider } from "ra-supabase";
 import { createClient } from "@supabase/supabase-js";
 
 // Configuration Supabase pour React-Admin

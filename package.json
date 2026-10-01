@@ -16,7 +16,7 @@
     "react-dom": "^18.3.1",
     "zustand": "^4.5.2",
     "react-admin": "^5.0.0",
-    "ra-data-supabase": "^5.0.0",
+    "ra-supabase": "*",
     "@mui/material": "^5.15.0",
     "@mui/icons-material": "^5.15.0",
     "@emotion/react": "^11.11.0",
